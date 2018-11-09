@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 347535cefce18c64c931efbdda87b233
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - laserufo: {fileID: 1806965706803554, guid: 814d91822d2dc3a429a219bef1132a4c, type: 2}
+  - explor: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
