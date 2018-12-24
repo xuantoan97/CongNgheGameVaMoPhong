@@ -18,8 +18,11 @@ public class Rocket : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//di chuyển chuyển theo vật có tọa độ taget
-		transform.Translate((transform.position - taget) * movespeed * Time.deltaTime*-1);
-		Destroy(gameObject,1.5f);
+		if (GameController.Pause == false)
+		{
+			transform.Translate((transform.position - taget) * movespeed * Time.deltaTime * -1);
+			Destroy(gameObject, 1.5f);
+		}
 	}
 	private void OnDestroy()
 	{

@@ -9,6 +9,7 @@ public class BackGroupMove : MonoBehaviour {
 	public float MoveRange;
 	private GameObject obj;
 	private Vector3 oldpos;
+	
 	void Start () {
 		obj=gameObject;
 		oldpos = obj.transform.position;
@@ -22,6 +23,5 @@ public class BackGroupMove : MonoBehaviour {
 		{
 			obj.transform.position = oldpos;
 		}
-		
 	}
 }

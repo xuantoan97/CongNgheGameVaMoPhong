@@ -13,37 +13,48 @@ public class ControllerShip2 : MonoBehaviour {
 	public GameObject laser;
 	//animation nổ
 	public GameObject explor;
+	private Animator anim;
 	//khai báo đối tượng game của ship
 	private GameObject obj;
 	//biến kiểm tra xuất hiện
-	private bool XuatHien;
-
+	public static bool XuatHien;
+	private AudioSource audioSource;
+	public AudioClip shoot;
+	public AudioClip gameover;
+	//mạng
+	public static int Life;
+	
 	void Start () {
 		obj = gameObject;
 		XuatHien = true;
+		audioSource = obj.GetComponent<AudioSource>();
+		Life = 3;
+		anim = gameObject.GetComponent<Animator>();
+		anim.SetTrigger("nottrungdan");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		anim.SetTrigger("nottrungdan");
 		//khi xuất hiện 
-		if (XuatHien == true)
+		if (XuatHien == true&&GameController.screen!=0)
 		{
 			transform.position = new Vector3(transform.position.x, transform.position.y + 0.15f, 0);
-			if (transform.position.y >= -4)
+			if (transform.position.y >= -6)
 			{
 				XuatHien = false;
 			}
 		}
 		//điều khiển phi thuyền
-		if (Input.GetKeyDown(KeyCode.Space)==true)
+
+		if (Input.GetKeyDown(KeyCode.Space)==true && GameController.Pause == false)
 		{
-			
-			  GameObject laserclone = Instantiate(laser, new Vector3(transform.position.x, transform.position.y+0.5f,0), Quaternion.identity) as GameObject;
-			  Destroy(laserclone, 4f);
-			
-			
+			audioSource.clip = shoot;
+			audioSource.Play();
+			  GameObject laserclone = Instantiate(laser, new Vector3(transform.position.x, transform.position.y+1f,0), Quaternion.identity) as GameObject;
+				laserclone.GetComponent<Laser>().huongcualaser = 1;
 		}
-		if (Input.GetKey(KeyCode.W))
+		if (Input.GetKey(KeyCode.W) && GameController.Pause == false)
 		{
 			oldpos = transform.position;
 			transform.position = new Vector3(transform.position.x, transform.position.y +0.01f*movespeed, 0);
@@ -52,7 +63,7 @@ public class ControllerShip2 : MonoBehaviour {
 				transform.position = oldpos;
 			}
 		}
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(KeyCode.A) && GameController.Pause == false)
 		{
 			oldpos = transform.position;
 			transform.position = new Vector3(transform.position.x - 0.01f * movespeed, transform.position.y , 0);
@@ -61,7 +72,7 @@ public class ControllerShip2 : MonoBehaviour {
 				transform.position = oldpos;
 			}
 		}
-		if (Input.GetKey(KeyCode.S))
+		if (Input.GetKey(KeyCode.S) && GameController.Pause == false)
 		{
 			oldpos = transform.position;
 			transform.position = new Vector3(transform.position.x, transform.position.y - 0.01f * movespeed, 0);
@@ -70,7 +81,7 @@ public class ControllerShip2 : MonoBehaviour {
 				transform.position = oldpos;
 			}
 		}
-		if (Input.GetKey(KeyCode.D))
+		if (Input.GetKey(KeyCode.D) &&GameController.Pause == false)
 		{
 			oldpos = transform.position;
 			transform.position = new Vector3(transform.position.x + 0.01f * movespeed, transform.position.y, 0);
@@ -79,25 +90,40 @@ public class ControllerShip2 : MonoBehaviour {
 				transform.position = oldpos;
 			}
 		}
+		if (Boss.IsLive == false&&GameController.screen==4)
+		{
+			transform.position = new Vector3(0, -20, 0);
+		}
 		
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		anim.SetTrigger("trungdan");
 		//hủy ship khi chạm vào các đối tượng khác
-		Destroy(obj);
+		Life--;
+		if (Life <= 0)
+		{
+			Life = 0;
+			GameObject exp = Instantiate(explor, transform.position, Quaternion.identity) as GameObject;
+			Destroy(exp, 0.25f);
+			audioSource.clip = gameover;
+			audioSource.Play();
+			transform.position = new Vector3(0, -20, 0);
+			GameController.Restart = false;
+		}
+		if (collision.isTrigger == true)
+		{
+
+			Destroy(collision.gameObject);
+		}
 	}
-	private void OnDestroy()
-	{
-		//tạo hiệu ứng nổ khi ship bị hủy
-		GameObject exp = Instantiate(explor, transform.position, Quaternion.identity) as GameObject;
-		Destroy(exp, 0.25f);
-	}
-	//private void OnCollisionEnter2D(Collision2D collision)
+	//private void OnDestroy()
 	//{
-	//	Time.timeScale = 0;
-	//}
-	//void EndGame()
-	//{
-	//	Time.timeScale = 0;
-	//}
+	//	//tạo hiệu ứng nổ khi ship bị hủy
+	//	Life = 0;
+	//	GameObject exp = Instantiate(explor, transform.position, Quaternion.identity) as GameObject;
+	//	Destroy(exp, 0.25f);
+	//	audioSource.clip = gameover;
+	//	audioSource.Play();
+	
 }

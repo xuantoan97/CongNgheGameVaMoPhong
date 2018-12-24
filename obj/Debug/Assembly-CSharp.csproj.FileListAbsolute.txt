@@ -166,3 +166,6 @@ E:\Project Game\cngvmp\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 E:\Project Game\cngvmp\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 E:\Project Game\cngvmp\obj\Debug\Assembly-CSharp.dll
 E:\Project Game\cngvmp\obj\Debug\Assembly-CSharp.pdb
+E:\Project Game\cngvmp\Temp\bin\Debug\Facebook.Unity.Settings.dll
+E:\Project Game\cngvmp\Temp\bin\Debug\Vuforia.UnityExtensions.dll
+E:\Project Game\cngvmp\Temp\bin\Debug\Vuforia.UnityExtensions.xml

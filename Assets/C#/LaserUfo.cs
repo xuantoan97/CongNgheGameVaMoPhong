@@ -8,7 +8,7 @@ public class LaserUfo : MonoBehaviour {
 	public float target;
 	//vận tốc
 	public float movespeed;
-
+	
 	void Start () {
 		
 	}
@@ -16,8 +16,11 @@ public class LaserUfo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//transform.Translate((transform.position - target) * movespeed * Time.deltaTime * -1);
-		
+		if (GameController.Pause == false)
+		{
 			transform.position = new Vector3(transform.position.x + Time.deltaTime * target, transform.position.y - Time.deltaTime * movespeed, 0);
-
-	}
+			Destroy(gameObject, 2f);
+		}
+		}
+	
 }

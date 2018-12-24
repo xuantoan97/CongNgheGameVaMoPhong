@@ -12,11 +12,13 @@ public class Ufo2 : MonoBehaviour
 
 	//thời gian giữa các lần bắn
 	static float delay=50;
-
+	//hp
+	private int HP;
 	//các thuộc tính điều khiển chuyển động của ufo
 	private static bool MaxY = false;
 	private  bool Bienx = false;
 	private float bien;
+	public static int SL = 0;
 
 	//vận tốc
 	public float movespeed;
@@ -25,6 +27,7 @@ public class Ufo2 : MonoBehaviour
 	Vector3 oldpos;
 	void Start()
 	{
+		HP = 2;
 		ship = GameObject.FindGameObjectWithTag("ship");
 	
 	}
@@ -32,21 +35,23 @@ public class Ufo2 : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if(GameController.Pause==false)
+		{
 		delay--;
 		if (delay == 0)
 		{
 			GameObject laser = Instantiate(laserufo, new Vector3(transform.position.x, transform.position.y - 1f, 0), Quaternion.identity) as GameObject;
 			laser.GetComponent<LaserUfo>().target = Random.Range(-2f, 2f);
-			Destroy(laser, 2.0f);
 			delay = 25;
 		}
 		if (MaxY == false)
 		{
-			transform.position = new Vector3(transform.position.x , transform.position.y - 0.01f * movespeed, 0);
-			bien = Random.Range(6f,9f);
-			if (transform.position.y <=bien)
+			transform.position = new Vector3(transform.position.x, transform.position.y - 0.01f * movespeed, 0);
+			bien = Random.Range(6f, 9f);
+			if (transform.position.y <= bien)
 			{
 				MaxY = true;
+
 			}
 		}
 		if (MaxY == true)
@@ -58,6 +63,7 @@ public class Ufo2 : MonoBehaviour
 				if (transform.position.x >= 15f)
 				{
 					Bienx = true;
+					GameController.appear = false;
 				}
 			}
 			if (Bienx == true)
@@ -69,17 +75,24 @@ public class Ufo2 : MonoBehaviour
 				}
 			}
 		}
+		}
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Destroy(collision.gameObject);
-		Destroy(gameObject);
-		GameController.man1 = true;
+		if (collision.gameObject != GameObject.FindGameObjectWithTag("ship"))
+		{
+			Destroy(collision.gameObject);
+		}
+		HP--;
+		if (HP == 0)
+		{
+			Destroy(gameObject);
+		}
 	}
 	private void OnDestroy()
 	{
-		GameController.SLufo += 1;
-		GameController.man1 = true;
+		SL++;
+		WallController.create = true;
 		Ufo2.MaxY = false;
 		GameObject exp = Instantiate(explor, transform.position, Quaternion.identity) as GameObject;
 		Destroy(exp, 0.25f);

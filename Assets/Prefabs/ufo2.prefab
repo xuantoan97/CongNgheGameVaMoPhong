@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114341196391623422}
   m_Layer: 0
   m_Name: ufo2
-  m_TagString: Untagged
+  m_TagString: boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserufo: {fileID: 1806965706803554, guid: 814d91822d2dc3a429a219bef1132a4c, type: 2}
   explor: {fileID: 1474455780198536, guid: a187feb1a75f3c04f80d2f3ca617041b, type: 2}
-  movespeed: 15
+  movespeed: 20
 --- !u!212 &212143309221748130
 SpriteRenderer:
   m_ObjectHideFlags: 1

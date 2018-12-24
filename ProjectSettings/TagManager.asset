@@ -6,6 +6,9 @@ TagManager:
   tags:
   - ship
   - lufo
+  - boss
+  - Laserufo
+  - bosscon
   layers:
   - Default
   - TransparentFX

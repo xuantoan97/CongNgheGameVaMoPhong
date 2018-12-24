@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4736917505739718}
   - component: {fileID: 212561752351823760}
-  - component: {fileID: 114760524129207822}
   - component: {fileID: 60263980680514262}
-  - component: {fileID: 50864914416216118}
+  - component: {fileID: 50806082678447736}
+  - component: {fileID: 114820229840267700}
   m_Layer: 0
   m_Name: laser1
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50864914416216118
+--- !u!50 &50806082678447736
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -72,7 +72,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -94,7 +94,7 @@ PolygonCollider2D:
       - {x: 0.011700791, y: -0.083198234}
       - {x: 0.028248701, y: -0.083298974}
       - {x: 0.018198049, y: 0.1267001}
---- !u!114 &114760524129207822
+--- !u!114 &114820229840267700
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 35
-  DestroyTime: 2
   obj: {fileID: 0}
+  huongcualaser: 0
 --- !u!212 &212561752351823760
 SpriteRenderer:
   m_ObjectHideFlags: 1

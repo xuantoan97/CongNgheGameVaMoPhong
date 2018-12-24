@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 60697666147558110}
   m_Layer: 0
   m_Name: laserufo
-  m_TagString: lufo
+  m_TagString: Laserufo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: 0
-  movespeed: 10
+  movespeed: 12
 --- !u!212 &212075126756792274
 SpriteRenderer:
   m_ObjectHideFlags: 1
