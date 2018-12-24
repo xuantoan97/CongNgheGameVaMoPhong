@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-E:/Project Game/cngvmp/cngvmp.exe
+D:/FILE DPF/GIÁO TRÌNH K1-NĂM 4/Lập Trình Game Và Mô Phỏng/The Space Police/The Space Police.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
@@ -192,7 +192,7 @@ c8a41ce4eea7677f6dd2aa0e422a2f04 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehav
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
-d045c67351590139a2a1a9c9b628483a Assembly-CSharp.dll:.GameController
+265107996715a60463c4d8879b12a7e7 Assembly-CSharp.dll:.GameController
 f519c291eff66db7e7b4e0c0208f0b6f Assembly-CSharp.dll:.LaserUfo
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
@@ -238,7 +238,7 @@ ff1f24a01b16c92dd6cfa8dca663fb02 Assembly-CSharp.dll:.BackGroupMove
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 6471e5e3db3a6a660ad1bfd1cc182a3e Assembly-CSharp.dll:.ControllerShip2
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
-5c4d031dd10262234ccb2bbdf890a8b1 Assembly-CSharp.dll:.WallController
+95830db7fd54554a7239d4d542f7f8f1 Assembly-CSharp.dll:.WallController
 0b978b2a475433a14c7af54d6e1098ba Assembly-CSharp.dll:.bosscon2
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
