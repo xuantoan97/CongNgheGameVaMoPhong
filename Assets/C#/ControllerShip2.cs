@@ -92,7 +92,7 @@ public class ControllerShip2 : MonoBehaviour {
 		}
 		if (Boss.IsLive == false&&GameController.screen==4)
 		{
-			transform.position = new Vector3(0, -20, 0);
+			transform.position = new Vector3(0, -15, 0);
 		}
 		
 	}
@@ -108,7 +108,7 @@ public class ControllerShip2 : MonoBehaviour {
 			Destroy(exp, 0.25f);
 			audioSource.clip = gameover;
 			audioSource.Play();
-			transform.position = new Vector3(0, -20, 0);
+			transform.position = new Vector3(0, -15, 0);
 			GameController.Restart = false;
 		}
 		if (collision.isTrigger == true)

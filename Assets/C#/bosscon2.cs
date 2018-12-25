@@ -25,7 +25,7 @@ public class bosscon2 : MonoBehaviour {
 
 				GameObject ls = Instantiate(laser, new Vector3(transform.position.x, transform.position.y - 1.5f, 0), Quaternion.identity) as GameObject;
 				ls.GetComponent<Laser>().huongcualaser = -1;
-				delay = 60;
+				delay = 40;
 			}
 			if (bien == false)
 			{
@@ -42,10 +42,6 @@ public class bosscon2 : MonoBehaviour {
 				{
 					bien = false;
 				}
-			}
-			if (GameController.Restart == true)
-			{
-				Destroy(gameObject);
 			}
 		}
 	}

@@ -24,7 +24,7 @@ public class Boss2 : MonoBehaviour {
 		anim = obj.GetComponent<Animator>();
 		anim.SetTrigger("nottrungdan");
 		audioSource = obj.GetComponent<AudioSource>();
-		HP = 35;
+		HP = 50;
 		delay = 600;
 	}
 	
@@ -101,10 +101,6 @@ public class Boss2 : MonoBehaviour {
 				{
 					bien = false;
 				}
-			}
-			if (GameController.Restart == true)
-			{
-				Destroy(gameObject);
 			}
 		}
 

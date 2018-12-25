@@ -121,9 +121,12 @@ public class GameController : MonoBehaviour {
 		ControllerShip2.Life = 3;
 		screen = 1;
 		Ufo2.SL = 0;
+		bosscon2.SL = 6;
+		Boss.IsLive = true;
 		audioSource.clip = backgroupmusic;
 		audioSource.loop = true;
 		audioSource.Play();
+		TextPLEndGame.text = "Game Over";
 		PLEndGame.SetActive(false);
 		GameController.Pause = false;
 		Restart = true;
